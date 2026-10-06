@@ -1,9 +1,11 @@
 "use client";
 
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useState, useSyncExternalStore } from "react";
+import { getTheme, subscribeTheme, type Theme } from "@/lib/theme";
 
 export function MermaidDiagram({ chart }: { chart: string }) {
   const id = useId().replace(/:/g, "");
+  const theme = useSyncExternalStore<Theme>(subscribeTheme, getTheme, () => "light");
   const [svg, setSvg] = useState("");
   const [failed, setFailed] = useState(false);
 
@@ -14,11 +16,11 @@ export function MermaidDiagram({ chart }: { chart: string }) {
         const mermaid = (await import("mermaid")).default;
         mermaid.initialize({
           startOnLoad: false,
-          theme: "neutral",
+          theme: theme === "dark" ? "dark" : "neutral",
           securityLevel: "strict",
           fontFamily: "inherit",
         });
-        const { svg } = await mermaid.render(`m-${id}`, chart);
+        const { svg } = await mermaid.render(`m-${id}-${theme}`, chart);
         if (!cancelled) setSvg(svg);
       } catch {
         if (!cancelled) setFailed(true);
@@ -27,7 +29,7 @@ export function MermaidDiagram({ chart }: { chart: string }) {
     return () => {
       cancelled = true;
     };
-  }, [chart, id]);
+  }, [chart, id, theme]);
 
   if (failed) {
     return (

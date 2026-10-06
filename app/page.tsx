@@ -80,7 +80,7 @@ export default function HomePage() {
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Link
                 href="/projects"
-                className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-ink/10 transition hover:bg-brand"
+                className="inline-flex items-center gap-2 rounded-full bg-strong px-6 py-3 text-sm font-semibold text-on-strong shadow-lg shadow-night/20 transition hover:bg-brand hover:text-white"
               >
                 View my work <ArrowRight size={16} />
               </Link>
@@ -137,7 +137,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="animate-floaty absolute -right-3 bottom-16 flex items-center gap-2 rounded-2xl border border-line bg-surface px-3.5 py-2.5 shadow-card sm:-right-8" style={{ ["--r" as string]: "3deg", animationDelay: "1.2s" }}>
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-mint-soft text-emerald-600">
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-mint-soft text-mint-fg">
                 <Smartphone size={17} />
               </span>
               <div className="text-xs">
@@ -146,7 +146,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="animate-floaty absolute -bottom-4 left-6 flex items-center gap-2 rounded-2xl border border-line bg-surface px-3.5 py-2.5 shadow-card" style={{ ["--r" as string]: "-2deg", animationDelay: "2.2s" }}>
-              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-sun-soft text-amber-600">
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-sun-soft text-sun-fg">
                 <Server size={17} />
               </span>
               <div className="text-xs">
@@ -270,7 +270,7 @@ export default function HomePage() {
       {/* CTA */}
       <section className="mx-auto max-w-6xl px-4 pt-20 sm:px-6">
         <Reveal>
-          <div className="relative overflow-hidden rounded-[2rem] bg-ink px-8 py-14 text-center text-white sm:px-14">
+          <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-night px-8 py-14 text-center text-white sm:px-14">
             <div className="pointer-events-none absolute -left-10 -top-10 h-56 w-56 rounded-full bg-brand/40 blur-3xl" />
             <div className="pointer-events-none absolute -bottom-16 -right-10 h-64 w-64 rounded-full bg-mint/30 blur-3xl" />
             <Sparkles className="relative mx-auto text-sun" size={28} />
@@ -282,7 +282,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/contact"
-              className="relative mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-ink transition hover:bg-mint hover:text-white"
+              className="relative mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-semibold text-night transition hover:bg-mint hover:text-white"
             >
               Get in touch <ArrowRight size={16} />
             </Link>

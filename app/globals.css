@@ -1,27 +1,77 @@
 @import "tailwindcss";
 
+/* `dark:` variant follows the data-theme attribute (set by the toggle / pre-paint script), not the OS setting. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 :root {
   --background: #fbfaf7;
   --foreground: #0f172a;
+  --surface: #ffffff;
+  --ink: #0f172a;
+  --ink-muted: #475569;
+  --ink-faint: #8795a8;
+  --line: #e7e5df;
+  --sand: #f3f1ea;
+  --brand: #4f46e5;
+  --brand-soft: #eef0ff;
+  --mint-soft: #e3f7ee;
+  --sun-soft: #fff4dc;
+  --rose-soft: #ffe8ec;
+  --mint-fg: #047857;
+  --sun-fg: #b45309;
+  --rose-fg: #e11d48;
+  --strong: #0f172a; /* solid "ink" buttons/pills */
+  --on-strong: #ffffff;
+  --dots: #d9d6cc;
+  --selection: #c7d2fe;
+}
+
+:root[data-theme="dark"] {
+  --background: #0b1120;
+  --foreground: #e5e9f0;
+  --surface: #121a2e;
+  --ink: #f1f5f9;
+  --ink-muted: #a3b0c4;
+  --ink-faint: #7d8ba1;
+  --line: #243049;
+  --sand: #18223a;
+  --brand: #6366f1;
+  --brand-soft: #1e2347;
+  --mint-soft: #0f2e26;
+  --sun-soft: #33270f;
+  --rose-soft: #3a1620;
+  --mint-fg: #6ee7b7;
+  --sun-fg: #fcd34d;
+  --rose-fg: #fda4af;
+  --strong: #e2e8f0;
+  --on-strong: #0b1120;
+  --dots: #1e2a42;
+  --selection: #3730a3;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-surface: #ffffff;
-  --color-ink: #0f172a;
-  --color-ink-muted: #475569;
-  --color-ink-faint: #94a3b8;
-  --color-line: #e7e5df;
-  --color-sand: #f3f1ea;
-  --color-brand: #4f46e5;
-  --color-brand-soft: #eef0ff;
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --color-sand: var(--sand);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
   --color-mint: #10b981;
-  --color-mint-soft: #e3f7ee;
+  --color-mint-soft: var(--mint-soft);
   --color-sun: #f59e0b;
-  --color-sun-soft: #fff4dc;
+  --color-sun-soft: var(--sun-soft);
   --color-rose: #f43f5e;
-  --color-rose-soft: #ffe8ec;
+  --color-rose-soft: var(--rose-soft);
+  --color-mint-fg: var(--mint-fg);
+  --color-sun-fg: var(--sun-fg);
+  --color-rose-fg: var(--rose-fg);
+  --color-strong: var(--strong);
+  --color-on-strong: var(--on-strong);
+  --color-night: #0f172a; /* always-dark surfaces (CTA card, code blocks) */
   --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-space), var(--font-plex-sans), sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, monospace;
@@ -29,9 +79,17 @@
   --shadow-lift: 0 2px 4px rgba(15, 23, 42, 0.05), 0 22px 50px rgba(79, 70, 229, 0.14);
 }
 
+:root[data-theme="dark"] {
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 30px rgba(0, 0, 0, 0.35);
+  --shadow-lift: 0 2px 4px rgba(0, 0, 0, 0.5), 0 22px 50px rgba(99, 102, 241, 0.22);
+}
+
 html {
   scroll-behavior: smooth;
   color-scheme: light;
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 body {
@@ -41,12 +99,12 @@ body {
 }
 
 ::selection {
-  background: #c7d2fe;
+  background: var(--selection);
 }
 
 /* dotted paper texture used behind hero sections */
 .bg-dots {
-  background-image: radial-gradient(#d9d6cc 1px, transparent 1px);
+  background-image: radial-gradient(var(--dots) 1px, transparent 1px);
   background-size: 22px 22px;
 }
 

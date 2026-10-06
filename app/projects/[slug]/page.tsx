@@ -162,7 +162,7 @@ export default async function ProjectDocsPage({ params }: PageProps<"/projects/[
           <span className="rounded-full bg-sand px-3 py-1 text-xs font-semibold text-ink-muted">{project.industry}</span>
           <span
             className={`rounded-full px-3 py-1 text-xs font-semibold ${
-              project.status === "Live" ? "bg-mint-soft text-emerald-700" : "bg-sun-soft text-amber-700"
+              project.status === "Live" ? "bg-mint-soft text-mint-fg" : "bg-sun-soft text-sun-fg"
             }`}
           >
             {project.status}
@@ -172,7 +172,7 @@ export default async function ProjectDocsPage({ params }: PageProps<"/projects/[
               href={project.url}
               target="_blank"
               rel="noreferrer"
-              className="ml-auto inline-flex items-center gap-1.5 rounded-full bg-ink px-4 py-1.5 text-xs font-semibold text-white transition hover:bg-brand"
+              className="ml-auto inline-flex items-center gap-1.5 rounded-full bg-strong px-4 py-1.5 text-xs font-semibold text-on-strong transition hover:bg-brand hover:text-white"
             >
               Visit live site <ExternalLink size={13} />
             </a>
@@ -400,7 +400,7 @@ export default async function ProjectDocsPage({ params }: PageProps<"/projects/[
 
       <Section id="deploy" num={n("deploy")} title={isCheat ? "Setup & deployment" : "Deployment"}>
         {isCheat && (
-          <pre className="mb-4 overflow-x-auto rounded-xl bg-ink p-4 font-mono text-[12.5px] leading-relaxed text-slate-100">
+          <pre className="mb-4 overflow-x-auto rounded-xl border border-white/10 bg-night p-4 font-mono text-[12.5px] leading-relaxed text-slate-100">
             <code>{cheatSetup}</code>
           </pre>
         )}
@@ -431,7 +431,7 @@ export default async function ProjectDocsPage({ params }: PageProps<"/projects/[
                     <td className="px-4 py-2.5">
                       <span
                         className={`rounded-full px-2 py-0.5 text-[11px] font-semibold ${
-                          r.type === "Critical bug" ? "bg-sun-soft text-amber-700" : "bg-brand-soft text-brand"
+                          r.type === "Critical bug" ? "bg-sun-soft text-sun-fg" : "bg-brand-soft text-brand"
                         }`}
                       >
                         {r.type}

@@ -1,7 +1,7 @@
 export function Logo({ size = 36 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 96 96" aria-hidden="true" className="shrink-0">
-      <rect width="96" height="96" rx="24" fill="#0f172a" />
+      <rect x="1.5" y="1.5" width="93" height="93" rx="23" fill="#0f172a" stroke="#475569" strokeOpacity="0.5" strokeWidth="3" />
       <path
         d="M62 28H34v40h28M34 48h20"
         fill="none"

@@ -15,6 +15,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));
-  const legal = [{ url: `${siteUrl}/cookies`, changeFrequency: "yearly" as const, priority: 0.2 }];
+  const legal = ["/privacy", "/cookies"].map((path) => ({
+    url: `${siteUrl}${path}`,
+    changeFrequency: "yearly" as const,
+    priority: 0.2,
+  }));
   return [...pages, ...docs, ...legal];
 }

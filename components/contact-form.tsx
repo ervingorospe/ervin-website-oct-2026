@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Script from "next/script";
 import { useState, type FormEvent } from "react";
 import { Loader2, Send } from "lucide-react";
@@ -90,7 +91,7 @@ export function ContactForm() {
         />
       )}
       {ready && needsCaptcha && !consent.security && (
-        <div role="note" className="rounded-xl border border-sun/40 bg-sun-soft px-4 py-3 text-sm text-amber-900">
+        <div role="note" className="rounded-xl border border-sun/40 bg-sun-soft px-4 py-3 text-sm text-sun-fg">
           <p>
             The contact form uses Google reCAPTCHA to block spam, and you haven&apos;t allowed it. Enable it to send a
             message, or email me directly at{" "}
@@ -103,14 +104,14 @@ export function ContactForm() {
             <button
               type="button"
               onClick={() => save({ security: true })}
-              className="rounded-full bg-ink px-4 py-2 text-xs font-semibold text-white hover:bg-brand"
+              className="rounded-full bg-strong px-4 py-2 text-xs font-semibold text-on-strong hover:bg-brand hover:text-white"
             >
               Enable spam protection
             </button>
             <button
               type="button"
               onClick={openSettings}
-              className="rounded-full border border-ink/30 px-4 py-2 text-xs font-semibold text-ink hover:bg-white/60"
+              className="rounded-full border border-ink/30 px-4 py-2 text-xs font-semibold text-ink hover:bg-surface/60"
             >
               Cookie settings
             </button>
@@ -118,7 +119,7 @@ export function ContactForm() {
         </div>
       )}
       {scriptFailed && (
-        <p role="alert" className="rounded-xl bg-rose-soft px-4 py-3 text-sm text-rose-700">
+        <p role="alert" className="rounded-xl bg-rose-soft px-4 py-3 text-sm text-rose-fg">
           The spam check couldn&apos;t load. An ad blocker or privacy extension may be blocking it. Disable it for this
           page, or email me directly at{" "}
           <a className="font-semibold underline" href={`mailto:${profile.email}`}>
@@ -175,7 +176,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={sending || !canSubmit}
-        className="inline-flex items-center gap-2 rounded-full bg-ink px-7 py-3 text-sm font-semibold text-white transition hover:bg-brand disabled:cursor-not-allowed disabled:opacity-60"
+        className="inline-flex items-center gap-2 rounded-full bg-strong px-7 py-3 text-sm font-semibold text-on-strong transition hover:bg-brand hover:text-white disabled:cursor-not-allowed disabled:opacity-60"
       >
         {sending ? (
           <>
@@ -187,6 +188,13 @@ export function ContactForm() {
           </>
         )}
       </button>
+      <p className="text-xs leading-relaxed text-ink-faint">
+        I use your details only to reply to you. See the{" "}
+        <Link className="underline" href="/privacy">
+          Privacy Policy
+        </Link>
+        .
+      </p>
       {SITE_KEY && (
         <p className="text-xs leading-relaxed text-ink-faint">
           Protected by reCAPTCHA. Google&apos;s{" "}
@@ -201,12 +209,12 @@ export function ContactForm() {
         </p>
       )}
       {status.kind === "sent" && (
-        <p role="status" className="rounded-xl bg-mint-soft px-4 py-3 text-sm text-emerald-800">
+        <p role="status" className="rounded-xl bg-mint-soft px-4 py-3 text-sm text-mint-fg">
           Thanks for reaching out, I&apos;ll reply soon
         </p>
       )}
       {status.kind === "error" && (
-        <p role="alert" className="rounded-xl bg-rose-soft px-4 py-3 text-sm text-rose-700">
+        <p role="alert" className="rounded-xl bg-rose-soft px-4 py-3 text-sm text-rose-fg">
           {status.message} You can also write me at{" "}
           <a className="font-semibold underline" href={`mailto:${profile.email}`}>
             {profile.email}

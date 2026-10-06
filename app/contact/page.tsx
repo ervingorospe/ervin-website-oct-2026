@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 const channels = [
   { icon: Mail, label: "Email", value: profile.email, href: `mailto:${profile.email}`, tone: "bg-brand-soft text-brand" },
-  { icon: Phone, label: "Phone", value: profile.phone, href: "tel:+639304866849", tone: "bg-mint-soft text-emerald-600" },
+  { icon: Phone, label: "Phone", value: profile.phone, href: "tel:+639304866849", tone: "bg-mint-soft text-mint-fg" },
   { icon: FaLinkedin, label: "LinkedIn", value: "ervin-gorospe-dev0109", href: profile.linkedin, tone: "bg-brand-soft text-brand" },
   { icon: FaGithub, label: "GitHub", value: "ervingorospe", href: profile.github, tone: "bg-sand text-ink" },
 ];
@@ -61,7 +61,7 @@ export default function ContactPage() {
               </a>
             ))}
             <div className="flex items-start gap-4 rounded-2xl border border-dashed border-line bg-sand/60 p-4">
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-sun-soft text-amber-600">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-sun-soft text-sun-fg">
                 <MapPin size={20} />
               </span>
               <div>

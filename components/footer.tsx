@@ -41,7 +41,7 @@ export function Footer() {
             <a
               href={`mailto:${profile.email}`}
               aria-label="Email"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink-muted transition hover:border-mint hover:text-emerald-600"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink-muted transition hover:border-mint hover:text-mint-fg"
             >
               <Mail size={18} />
             </a>
@@ -85,10 +85,14 @@ export function Footer() {
       </div>
       <div className="border-t border-line">
         <p className="mx-auto max-w-6xl px-4 py-5 text-xs text-ink-faint sm:px-6">
-          © {new Date().getFullYear()} {profile.name}. Built with Next.js &amp; Tailwind CSS.
+          © {new Date().getFullYear()} {profile.name}.
+          <span className="mx-2 text-line">·</span>
+          <Link href="/privacy" className="hover:text-brand">
+            Privacy Policy
+          </Link>
           <span className="mx-2 text-line">·</span>
           <Link href="/cookies" className="hover:text-brand">
-            Cookies &amp; privacy
+            Cookie Policy
           </Link>
           <span className="mx-2 text-line">·</span>
           <CookieSettingsButton className="hover:text-brand" />

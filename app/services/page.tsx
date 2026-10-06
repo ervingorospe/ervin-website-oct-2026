@@ -47,7 +47,7 @@ export default function ServicesPage() {
       >
         <Link
           href="/contact"
-          className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand"
+          className="inline-flex items-center gap-2 rounded-full bg-strong px-6 py-3 text-sm font-semibold text-on-strong transition hover:bg-brand hover:text-white"
         >
           Start a project <ArrowRight size={16} />
         </Link>

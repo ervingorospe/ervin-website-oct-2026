@@ -44,10 +44,10 @@ export default function SkillsPage() {
                     }`}
                   >
                     <span
-                      className={`flex shrink-0 items-center justify-center rounded-xl transition group-hover:scale-110 ${
+                      className={`flex shrink-0 items-center justify-center rounded-xl transition group-hover:scale-110 dark:brightness-[1.45] dark:saturate-[1.15] ${
                         gi === 0 ? "h-14 w-14" : "h-11 w-11"
                       }`}
-                      style={{ backgroundColor: `${s.color}14`, color: s.color }}
+                      style={{ backgroundColor: `color-mix(in srgb, ${s.color} 9%, transparent)`, color: s.color }}
                     >
                       <s.icon size={gi === 0 ? 28 : 22} />
                     </span>

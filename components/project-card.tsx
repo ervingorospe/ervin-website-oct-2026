@@ -26,7 +26,7 @@ export function ProjectCard({ project, priority = false }: { project: Project; p
           {project.kind}
         </span>
         {project.status !== "Live" && (
-          <span className="absolute right-3 top-3 rounded-full bg-ink px-2.5 py-1 text-[11px] font-semibold text-white">
+          <span className="absolute right-3 top-3 rounded-full bg-strong px-2.5 py-1 text-[11px] font-semibold text-on-strong">
             {project.status}
           </span>
         )}

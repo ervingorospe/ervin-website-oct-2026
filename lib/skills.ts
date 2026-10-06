@@ -30,7 +30,7 @@ import { Cloud, Gauge, Network, SearchCheck, Server, Tags, Terminal } from "luci
 export type Skill = {
   name: string;
   icon: IconType | typeof Cloud;
-  color: string; // brand color used for the icon tile
+  color: string; // brand color (or a CSS var) used for the icon tile
 };
 
 export type SkillGroup = {
@@ -42,9 +42,9 @@ export type SkillGroup = {
 export const mainStack: Skill[] = [
   { name: "React", icon: SiReact, color: "#0ea5e9" },
   { name: "React Native", icon: SiReact, color: "#6366f1" },
-  { name: "Next.js", icon: SiNextdotjs, color: "#0f172a" },
+  { name: "Next.js", icon: SiNextdotjs, color: "var(--ink)" },
   { name: "Node.js", icon: SiNodedotjs, color: "#16a34a" },
-  { name: "Express.js", icon: SiExpress, color: "#334155" },
+  { name: "Express.js", icon: SiExpress, color: "var(--ink-muted)" },
   { name: "NestJS", icon: SiNestjs, color: "#e11d48" },
   { name: "TypeScript", icon: SiTypescript, color: "#2563eb" },
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06b6d4" },
@@ -112,8 +112,8 @@ export const skillGroups: SkillGroup[] = [
       { name: "MySQL Workbench", icon: SiMysql, color: "#0369a1" },
       { name: "Jira", icon: SiJira, color: "#2563eb" },
       { name: "Trello", icon: SiTrello, color: "#0ea5e9" },
-      { name: "Notion", icon: SiNotion, color: "#0f172a" },
-      { name: "GitHub", icon: FaGithub, color: "#0f172a" },
+      { name: "Notion", icon: SiNotion, color: "var(--ink)" },
+      { name: "GitHub", icon: FaGithub, color: "var(--ink)" },
     ],
   },
 ];

@@ -9,7 +9,7 @@ export default function NotFound() {
       <p className="mt-3 text-ink-muted">That page doesn&apos;t exist — it may have moved.</p>
       <Link
         href="/"
-        className="mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand"
+        className="mt-8 inline-flex items-center gap-2 rounded-full bg-strong px-6 py-3 text-sm font-semibold text-on-strong transition hover:bg-brand hover:text-white"
       >
         <ArrowLeft size={16} /> Back home
       </Link>

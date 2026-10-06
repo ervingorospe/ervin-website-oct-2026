@@ -8,7 +8,7 @@ import { useConsent } from "./consent-provider";
 const btnBase =
   "inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand";
 // Accept and Reject get identical visual weight on purpose (no dark-pattern nudging).
-const btnPrimary = `${btnBase} border border-ink bg-ink text-white hover:bg-brand hover:border-brand`;
+const btnPrimary = `${btnBase} border border-strong bg-strong text-on-strong hover:bg-brand hover:text-white hover:border-brand`;
 const btnSecondary = `${btnBase} border border-ink bg-surface text-ink hover:bg-sand`;
 const btnGhost = `${btnBase} text-ink-muted underline-offset-4 hover:text-brand hover:underline`;
 
@@ -26,7 +26,7 @@ export function CookieBanner() {
           className="fixed inset-x-3 bottom-3 z-50 mx-auto max-w-3xl rounded-3xl border border-line bg-surface p-5 shadow-2xl sm:bottom-5 sm:p-6"
         >
           <div className="flex items-start gap-4">
-            <span className="hidden h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-sun-soft text-amber-600 sm:flex">
+            <span className="hidden h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-sun-soft text-sun-fg sm:flex">
               <Cookie size={22} />
             </span>
             <div className="min-w-0 flex-1">
@@ -35,7 +35,7 @@ export function CookieBanner() {
                 This site has no ads or analytics. The only optional cookie comes from Google reCAPTCHA, which
                 protects the contact form from spam and loads only on the Contact page. Choose whether to allow it.{" "}
                 <Link href="/cookies" className="font-medium text-brand underline underline-offset-2">
-                  Cookies &amp; privacy
+                  Cookie Policy
                 </Link>
               </p>
               <div className="mt-4 flex flex-wrap items-center gap-2.5">
@@ -78,7 +78,7 @@ function PreferencesDialog() {
   }, [closeSettings]);
 
   return (
-    <div className="fixed inset-0 z-[60] flex items-end justify-center bg-ink/40 p-3 backdrop-blur-sm sm:items-center">
+    <div className="fixed inset-0 z-[60] flex items-end justify-center bg-night/50 p-3 backdrop-blur-sm sm:items-center">
       <div
         ref={panelRef}
         role="dialog"
