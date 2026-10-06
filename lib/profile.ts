@@ -3,7 +3,7 @@ export const profile = {
   firstName: "Ervin",
   role: "Full-Stack Software Developer",
   location: "Metro Manila, Philippines",
-  email: "ervingorospe.code@gmail.com",
+  email: "ervingorospe123@gmail.com",
   phone: "+63 930 486 6849",
   site: "ervin-gorospe.vercel.app",
   github: "https://github.com/ervingorospe",
